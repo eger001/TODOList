@@ -2,6 +2,7 @@
 
 namespace app\core;
 
+use app\interfaces\Indexable;
 use JetBrains\PhpStorm\NoReturn;
 
 class Router
@@ -66,11 +67,11 @@ class Router
 
     /**
      * calling action of the route
-     * @param object $controller
+     * @param Indexable $controller
      * @param string $actionName
      * @return void
      */
-    private static function callAction(object $controller, string $actionName): void
+    private static function callAction(Indexable $controller, string $actionName): void
     {
         $controller->$actionName();
     }
