@@ -1,4 +1,6 @@
 <?php
+include_once '..'.DIRECTORY_SEPARATOR.'config.php';
+
 
 spl_autoload_register(function ($class){
 
