@@ -12,7 +12,7 @@ abstract class Controller implements Indexable
     public function __construct($template = null)
     {
         $this->view = new View($template);
-        $this->model = new Model;
+        $this->model = new Model();
     }
 
     abstract public function index();
