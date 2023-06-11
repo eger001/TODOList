@@ -5,7 +5,8 @@ namespace app\core;
 class View
 {
     const VIEWS_DIR = '..'.DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR.'views';
-    const TEMPLATES_PATH = self::VIEWS_DIR.'templates';
+    const TEMPLATES_PATH = self::VIEWS_DIR.DIRECTORY_SEPARATOR.'templates';
+    const PAGES_PATH = self::VIEWS_DIR.DIRECTORY_SEPARATOR.'pages';
     protected string $template = 'main';
     protected string $page;
 
@@ -38,5 +39,11 @@ class View
     private function getTemplatePath(): string
     {
         return self::TEMPLATES_PATH.DIRECTORY_SEPARATOR.$this->template.'.php';
+    }
+
+
+    public function getPagePath(): string
+    {
+        return self::PAGES_PATH.DIRECTORY_SEPARATOR.$this->page.'.php';
     }
 }
