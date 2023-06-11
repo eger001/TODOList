@@ -8,6 +8,7 @@ abstract class Controller implements Indexable
 {
     protected View $view;
     protected Model $model;
+    protected Validator $validator;
 
     public function __construct($template = null)
     {
