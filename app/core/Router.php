@@ -9,7 +9,8 @@ class Router
 {
     const CONTROLLER_NAMESPACE = 'app\controllers\\';
     const CONTROLLER_SUFFIX = 'Controller';
-    const BASE_ROUTE_NAME = 'index';
+    const BASE_CONTROLLER_NAME = 'authorizationPage';
+    const BASE_ACTION_NAME = 'index';
 
 
     /**the main function initiated all script
@@ -25,13 +26,13 @@ class Router
         $pathComponents = explode('/', $requestURIWithoutGETPath);
         $pathComponents = array_slice($pathComponents, 1);
 
-        $controllerName = self::BASE_ROUTE_NAME;
+        $controllerName = self::BASE_CONTROLLER_NAME;
         if (!empty($pathComponents[0]))
         {
             $controllerName = strtolower($pathComponents[0]);
         }
 
-        $actionName = self::BASE_ROUTE_NAME;
+        $actionName = self::BASE_ACTION_NAME;
         if (!empty($pathComponents[1]))
         {
             $actionName = strtolower($pathComponents[1]);
