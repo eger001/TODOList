@@ -9,7 +9,7 @@ class Router
 {
     const CONTROLLER_NAMESPACE = 'app\controllers\\';
     const CONTROLLER_SUFFIX = 'Controller';
-    const BASE_CONTROLLER_NAME = 'authorizationPage';
+    const BASE_CONTROLLER_NAME = 'user';
     const BASE_ACTION_NAME = 'index';
 
 
@@ -75,5 +75,31 @@ class Router
     private static function callAction(Indexable $controller, string $actionName): void
     {
         $controller->$actionName();
+    }
+
+    public static function url(string|null $controller = null, string|null $action = null): string
+    {
+        $controller = $controller ?? 'user';
+        $action = $action ?? 'index';
+        return "/{$controller}/{$action}";
+    }
+
+
+    #[NoReturn] public static function redirect(string $controller, string $action): void
+    {
+        header('Location: '.self::url($controller, $action));
+        exit();
+    }
+
+    #[NoReturn] public static function goBack(): void
+    {
+        $referer = $_SERVER['HTTP_REFERER'] ?? null;
+        if (!$referer)
+        {
+            header('Location: /');
+            exit();
+        }
+        header('Location: '.$referer);
+        exit();
     }
 }
