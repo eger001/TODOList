@@ -37,6 +37,7 @@ class UserController extends Controller
         );
 
         $errors = $this->validator->validateUserEmail($user['email']);
+        $errors = array_merge($errors, $this->validator->validatePass($user['pass']));
         if (count($errors)>0)
         {
             Session::save('authorization', $errors);
