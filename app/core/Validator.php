@@ -22,26 +22,29 @@ class Validator
     {
         if (empty($email)) {
             $this->errors[] = 'Email cannot be empty';
-        }
-
-        $emailParts = explode('@', $email);
-        if (count($emailParts) != 2 || empty($emailParts[0] || empty($emailParts[1]))) {
-            $this->errors[] = 'Incorrect email';
         } else
         {
-            $emailParts[1] = explode('.', $emailParts[1]);
-            if (count($emailParts[1]) != 2 || empty($emailParts[1][0] || empty($emailParts[1][1]))) {
+            $emailParts = explode('@', $email);
+            if (count($emailParts) != 2 || empty($emailParts[0] || empty($emailParts[1]))) {
                 $this->errors[] = 'Incorrect email';
+            } else
+            {
+                $emailParts[1] = explode('.', $emailParts[1]);
+                if (count($emailParts[1]) != 2 || empty($emailParts[1][0] || empty($emailParts[1][1]))) {
+                    $this->errors[] = 'Incorrect email';
+                }
+                //TODO validation with db
             }
-            //TODO validation with db
         }
+
+
 
         //TODO react to two validation in one time
         return $this->errors;
     }
 
 
-    public function validatePass($pass): array
+    public function validatePass($pass, $user): array
     {
         if (empty($pass))
         {
@@ -61,6 +64,11 @@ class Validator
         } else if (!preg_match('/[0-9]/', $pass))
         {
             $this->errors[] = 'Password must contain at least one number';
+        }
+        $checkPass = $this->model->get($user)['pass'];
+        if(!password_verify($pass, $checkPass))
+        {
+            $this->errors[] = 'Password is incorrect';
         }
         return $this->errors;
     }

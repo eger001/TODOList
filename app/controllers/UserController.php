@@ -35,15 +35,18 @@ class UserController extends Controller
                 'pass'=>FILTER_DEFAULT,
             ]
         );
-
         $errors = $this->validator->validateUserEmail($user['email']);
-        $errors = array_merge($errors, $this->validator->validatePass($user['pass']));
         if (count($errors)>0)
         {
             Session::save('authorization', $errors);
             Router::goBack();
         }
-
+        $errors = $this->validator->validatePass($user['pass'], $user['email']);
+        if (count($errors)>0)
+        {
+            Session::save('authorization', $errors);
+            Router::goBack();
+        }
         $this->model->add($user);
     }
 }

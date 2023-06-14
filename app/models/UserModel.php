@@ -23,7 +23,7 @@ class UserModel extends Model
     public function get(string $email): array|null
     {
         $stmt = $this->db->prepare("SELECT * FROM $this->table WHERE users.login = ? LIMIT 1");
-        $stmt->bind_param('s', $login);
+        $stmt->bind_param('s', $email);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_assoc();
