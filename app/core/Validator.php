@@ -18,33 +18,44 @@ class Validator
 //        $this->session = new Session();
     }
 
-    public function validateUserEmail($email): array
+
+    /**
+     * method which validate  input email
+     * @param $email
+     * @return array
+     */
+    public function validateInputEmail($email): array
     {
         if (empty($email)) {
             $this->errors[] = 'Email cannot be empty';
         } else
         {
             $emailParts = explode('@', $email);
-            if (count($emailParts) != 2 || empty($emailParts[0] || empty($emailParts[1]))) {
+            $localPart = $emailParts[0];
+            $domainPart = $emailParts[1];
+            if (count($emailParts) != 2 || empty($localPart) || empty($domainPart)) {
                 $this->errors[] = 'Incorrect email';
             } else
             {
-                $emailParts[1] = explode('.', $emailParts[1]);
-                if (count($emailParts[1]) != 2 || empty($emailParts[1][0] || empty($emailParts[1][1]))) {
+                $domainPart = explode('.', $domainPart);
+                $subdomain = $domainPart[0];
+                $tld = $domainPart[1];
+                if (count($domainPart) != 2 || empty($subdomain || empty($tld))) {
                     $this->errors[] = 'Incorrect email';
                 }
-                //TODO validation with db
             }
         }
-
-
-
-        //TODO react to two validation in one time
         return $this->errors;
     }
 
 
-    public function validatePass($pass, $user): array
+    /**
+     * method which validate input pass
+     * @param $pass
+     * @param $user
+     * @return array
+     */
+    public function validateInputPass($pass, $user): array
     {
         if (empty($pass))
         {
@@ -65,11 +76,27 @@ class Validator
         {
             $this->errors[] = 'Password must contain at least one number';
         }
-        $checkPass = $this->model->get($user)['pass'];
-        if(!password_verify($pass, $checkPass))
+        return $this->errors;
+    }
+
+
+    /**
+     * method which validate user input data with their data in the DB
+     * @param $user
+     * @return array
+     */
+    public function validateUserData($user): array
+    {
+        $checkPass = $this->model->get($user['email']);
+        if (empty($checkPass))
+        {
+            $this->errors[] = 'This email is not exists';
+        } elseif (!password_verify($user['pass'], $checkPass['pass']))
         {
             $this->errors[] = 'Password is incorrect';
         }
         return $this->errors;
     }
+
+
 }
