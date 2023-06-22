@@ -30,4 +30,8 @@ spl_autoload_register(function ($class){
 
 });
 
+
+/**
+ * script init
+ */
 \app\core\Router::init();

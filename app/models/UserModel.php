@@ -8,6 +8,12 @@ class UserModel extends Model
 {
     private string $table = 'users';
 
+
+    /**
+     * add new user data to DB
+     * @param array $user
+     * @return void
+     */
     public function add(array $user): void
     {
         $user['email'] = $user['email'];
@@ -20,6 +26,11 @@ class UserModel extends Model
     }
 
 
+    /**
+     * get all user data
+     * @param string $email
+     * @return array|null
+     */
     public function get(string $email): array|null
     {
         $stmt = $this->db->prepare("SELECT * FROM $this->table WHERE users.login = ? LIMIT 1");

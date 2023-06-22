@@ -9,12 +9,23 @@ class Session
         session_start();
     }
 
+
+    /**
+     * @param string $prop
+     * @param array $data
+     * @return void
+     */
     public static function  save(string $prop, array $data): void
     {
         $_SESSION[$prop] = $data;
     }
 
-    public static function all($prop)
+
+    /**
+     * @param $prop
+     * @return array
+     */
+    public static function all($prop): array
     {
         if (isset($_SESSION[$prop]))
         {
@@ -26,7 +37,10 @@ class Session
     }
 
 
-
+    /**
+     * @param $prop
+     * @return void
+     */
     private static function unset($prop): void
     {
         unset($_SESSION[$prop]);

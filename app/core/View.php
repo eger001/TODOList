@@ -42,6 +42,9 @@ class View
     }
 
 
+    /**
+     * @return string
+     */
     public function getPagePath(): string
     {
         return self::PAGES_PATH.DIRECTORY_SEPARATOR.$this->page.'.php';
