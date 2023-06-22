@@ -18,7 +18,13 @@ class Router
      */
     public static function init(): void
     {
+        $sessionDuration = 30 * 24 * 60 * 60;
+        session_set_cookie_params($sessionDuration);
         session_start();
+        if (!isset($_SESSION['user_id']))
+        {
+            url('authorization', 'logout');
+        }
 
         $requestURI = $_SERVER['REQUEST_URI'];
         $requestURIWithoutGETPath = explode('?', $requestURI)[0];
@@ -77,6 +83,12 @@ class Router
         $controller->$actionName();
     }
 
+
+    /**
+     * @param string|null $controller
+     * @param string|null $action
+     * @return string
+     */
     public static function url(string|null $controller = null, string|null $action = null): string
     {
         $controller = $controller ?? 'user';
@@ -85,12 +97,22 @@ class Router
     }
 
 
+    /**
+     * @param string $controller
+     * @param string $action
+     * @return void
+     */
     #[NoReturn] public static function redirect(string $controller, string $action): void
     {
         header('Location: '.self::url($controller, $action));
         exit();
     }
 
+
+    /**
+     * the same as a redirect but return user to the previous page
+     * @return void
+     */
     #[NoReturn] public static function goBack(): void
     {
         $referer = $_SERVER['HTTP_REFERER'] ?? null;
