@@ -37,7 +37,7 @@ trait UserInputData
             Session::save('authorization', $errors);
             Router::goBack();
         }
-        $errors = $this->validator->validateInputPass($user['pass'], $user['email']);
+        $errors = $this->validator->validateInputPass($user['pass']);
         if (count($errors)>0)
         {
             Session::save('authorization', $errors);
