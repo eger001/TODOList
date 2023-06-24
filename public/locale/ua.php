@@ -22,5 +22,11 @@ return
                 'incorrect password'=>'Невірний пароль',
             ],
 
+        'inputs'=>
+            [
+                'enter email' => 'Введіть електронну адресу',
+                'enter password' => 'Введіть пароль',
+            ],
+
 
     ];

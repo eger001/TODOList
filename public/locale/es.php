@@ -22,4 +22,10 @@ return
                 'incorrect password' => 'Contraseña incorrecta',
             ],
 
+        'inputs'=>
+            [
+                'enter email' => 'Ingrese su correo electrónico',
+                'enter password' => 'Ingrese su contraseña',
+            ],
+
     ];

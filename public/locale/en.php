@@ -24,4 +24,10 @@ return
                 'incorrect password'=>'Invalid password',
             ],
 
+        'inputs'=>
+            [
+                'enter email' => 'Enter email',
+                'enter password' => 'Enter password',
+            ],
+
     ];
