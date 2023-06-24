@@ -26,6 +26,11 @@ class Router
             url('authorization', 'logout');
         }
 
+        if (!isset($_SESSION['locale']))
+        {
+            $_SESSION['locale'] = 'ua';
+        }
+
         $requestURI = $_SERVER['REQUEST_URI'];
         $requestURIWithoutGETPath = explode('?', $requestURI)[0];
 

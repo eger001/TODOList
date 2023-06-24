@@ -27,21 +27,21 @@ class Validator
     public function validateInputEmail($email): array
     {
         if (empty($email)) {
-            $this->errors[] = 'Email cannot be empty';
+            $this->errors[] = __('errors.empty email');
         } else
         {
             $emailParts = explode('@', $email);
             $localPart = $emailParts[0];
             $domainPart = $emailParts[1];
             if (count($emailParts) != 2 || empty($localPart) || empty($domainPart)) {
-                $this->errors[] = 'Incorrect email';
+                $this->errors[] = __('errors.incorrect email');
             } else
             {
                 $domainPart = explode('.', $domainPart);
                 $subdomain = $domainPart[0];
                 $tld = $domainPart[1];
                 if (count($domainPart) != 2 || empty($subdomain || empty($tld))) {
-                    $this->errors[] = 'Incorrect email';
+                    $this->errors[] = __('errors.incorrect email');
                 }
             }
         }
@@ -52,29 +52,28 @@ class Validator
     /**
      * method which validate input pass
      * @param $pass
-     * @param $user
      * @return array
      */
-    public function validateInputPass($pass, $user): array
+    public function validateInputPass($pass): array
     {
         if (empty($pass))
         {
-            $this->errors[] = 'Password cannot be empty';
+            $this->errors[] = __('errors.empty password');
         } else if(strlen($pass) > 20 || strlen($pass) < 8)
         {
-            $this->errors[] = 'Password must be at least 8 characters and not more than 20';
+            $this->errors[] = __('errors.password length');
         } else if (!preg_match('/^[a-zA-Z0-9]+$/', $pass))
         {
-            $this->errors[] = 'The password can only contain numbers and Latin letters';
+            $this->errors[] = __('errors.password contains');
         } else if (!preg_match('/[A-Z]/', $pass))
         {
-            $this->errors[] = 'Password must contain at least one uppercase letter';
+            $this->errors[] = __('errors.password without uppercase');
         } else if (!preg_match('/[a-z]/', $pass))
         {
-            $this->errors[] = 'Password must contain at least one lowercase letter';
+            $this->errors[] = __('errors.password without lowercase');
         } else if (!preg_match('/[0-9]/', $pass))
         {
-            $this->errors[] = 'Password must contain at least one number';
+            $this->errors[] = __('errors.password without numbers');
         }
         return $this->errors;
     }
@@ -90,10 +89,10 @@ class Validator
         $checkPass = $this->model->get($user['email']);
         if (empty($checkPass))
         {
-            $this->errors[] = 'This email is not exists';
+            $this->errors[] = __('errors.email doesn\'t exists');
         } elseif (!password_verify($user['pass'], $checkPass['pass']))
         {
-            $this->errors[] = 'Password is incorrect';
+            $this->errors[] = __('errors.incorrect password');
         }
         return $this->errors;
     }

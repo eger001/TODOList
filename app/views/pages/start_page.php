@@ -14,7 +14,7 @@
         <form action="<?= url('user', 'store')?>" method="post">
             <input type="email" name="email"/>
             <input type="password" name="pass"/>
-            <input type="submit"/>
+            <button type="submit"><?= __('buttons.sign up')?></button>
         </form>
         <div>
             <?php if(!empty($errors)):?>
@@ -28,11 +28,11 @@
         <form action="<?= url('authorization', 'login')?>" method="post">
             <input type="email" name="email"/>
             <input type="password" name="pass"/>
-            <input type="submit"/>
+            <button type="submit"><?= __('buttons.sign in')?></button>
         </form>
     </div>
     <?php else:?>
-    <a href="<?= url('authorization', 'logout')?>">Log Out</a>
+    <a href="<?= url('authorization', 'logout')?>"><?= __('buttons.log out')?></a>
     <?php endif;?>
 </body>
 </html>

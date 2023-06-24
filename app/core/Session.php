@@ -45,4 +45,10 @@ class Session
     {
         unset($_SESSION[$prop]);
     }
+
+    public static function setLocale($locale = 'ua'): string
+    {
+        return $_SESSION['locale'] = $locale;
+    }
+
 }

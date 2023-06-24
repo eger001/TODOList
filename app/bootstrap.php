@@ -14,6 +14,49 @@ function url(string|null $controller = null, string|null $action = null): string
 }
 
 
+
+function __($string = '', $locale = 'ua')
+{
+    if (!empty($_SESSION['locale']))
+    {
+        $locale = $_SESSION['locale'];
+    }
+
+    $file = '../public/locale/' . $locale . '.php';
+    $strings = [];
+    if (file_exists($file))
+    {
+        $strings = include $file;
+    }
+
+    $categories =
+        [
+           'buttons.'=>$strings['buttons'] ?? [],
+           'errors.'=>$strings['errors'] ?? [],
+        ] ;
+
+    $category = '';
+    $key = '';
+
+    if (str_starts_with($string, 'buttons.'))
+    {
+        $category = 'buttons.';
+        $key = substr($string, 8);
+    } elseif (str_starts_with($string, 'errors.'))
+    {
+        $category = 'errors.';
+        $key = substr($string, 7);
+    }
+
+    if (!empty($category) && !empty($key) && isset($categories[$category][$key]))
+    {
+        return $categories[$category][$key];
+    }
+
+    return $string;
+}
+
+
 /**
  * autoloader
  */
