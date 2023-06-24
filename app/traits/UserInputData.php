@@ -15,11 +15,23 @@ trait UserInputData
      */
     private function getUserInputData(): array
     {
-        $user = filter_input_array(INPUT_POST,
-            [
-                'email' => FILTER_DEFAULT,
-                'pass' => FILTER_DEFAULT,
-            ]);
+        $user = [];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['csrf_token']))
+        {
+            if ($_POST['csrf_token'] === $_SESSION['csrf_token'])
+            {
+                $user = filter_input_array(INPUT_POST,
+                    [
+                        'email' => FILTER_DEFAULT,
+                        'pass' => FILTER_DEFAULT,
+                    ]);
+            }
+        } else
+        {
+            http_response_code(404);
+            exit();
+        }
+
         return $user;
     }
 

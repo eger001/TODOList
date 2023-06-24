@@ -26,6 +26,7 @@ class AuthorizationController extends Controller
     /**
      * Checks if the user is logged in and performs the login operation
      * @return void
+     * @throws \Exception
      */
     #[NoReturn] public function login(): void
     {
@@ -37,6 +38,8 @@ class AuthorizationController extends Controller
             Router::goBack();
         }
         $_SESSION['authorized'] = true;
+        $token = bin2hex(random_bytes(32));
+        $_SESSION['csrf_token'] = $token;
         $userId = $this->model->get($user['email'])['id'];
         $this->userIDtoSession($userId);
         Router::redirect('user','index');

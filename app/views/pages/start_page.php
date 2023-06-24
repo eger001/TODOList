@@ -12,8 +12,11 @@
     <?php if (!isset($_SESSION['authorized'])):?>
     <div>
         <form action="<?= url('user', 'store')?>" method="post">
-            <input type="email" name="email"/>
-            <input type="password" name="pass"/>
+            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']?>">
+            <label for="email"><?= __('inputs.enter email')?></label>
+            <input type="email" name="email" id="email"/>
+            <label for="pass"><?= __('inputs.enter password')?></label>
+            <input type="password" name="pass" id="pass"/>
             <button type="submit"><?= __('buttons.sign up')?></button>
         </form>
         <div>
@@ -26,8 +29,11 @@
     </div>
     <div>
         <form action="<?= url('authorization', 'login')?>" method="post">
-            <input type="email" name="email"/>
-            <input type="password" name="pass"/>
+            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']?>">
+            <label for="email"><?= __('inputs.enter email')?></label>
+            <input type="email" name="email" id="email"/>
+            <label for="pass"><?= __('inputs.enter password')?></label>
+            <input type="password" name="pass" id="pass"/>
             <button type="submit"><?= __('buttons.sign in')?></button>
         </form>
     </div>

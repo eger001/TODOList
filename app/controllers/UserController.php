@@ -31,11 +31,16 @@ class UserController extends Controller
     /**
      * method which store new user in DB and use a trait methods
      * @return void
+     * @throws \Exception
      */
     #[NoReturn] public function store():void
     {
         $this->model->add($this->authorizationAlgo());
-
+        $user = $this->authorizationAlgo();
+        $userId = $this->model->get($user['email'])['id'];
+        $this->userIDtoSession($userId);
+        $token = bin2hex(random_bytes(32));
+        $_SESSION['csrf_token'] = $token;
         Router::redirect('user','index');
     }
 }

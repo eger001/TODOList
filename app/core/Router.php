@@ -15,6 +15,7 @@ class Router
 
     /**the main function initiated all script
      * @return void
+     * @throws \Exception
      */
     public static function init(): void
     {
@@ -29,6 +30,12 @@ class Router
         if (!isset($_SESSION['locale']))
         {
             $_SESSION['locale'] = 'ua';
+        }
+
+        if (!isset($_SESSION['csrf_token']))
+        {
+            $token = bin2hex(random_bytes(32));
+            $_SESSION['csrf_token'] = $token;
         }
 
         $requestURI = $_SERVER['REQUEST_URI'];
