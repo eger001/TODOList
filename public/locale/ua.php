@@ -20,6 +20,7 @@ return
                 'password without numbers'=>'Пароль повинен містити хоча б одну цифру',
                 'email doesn\'t exists'=>'Ви не зареєстровані',
                 'incorrect password'=>'Невірний пароль',
+                'email exists'=>'Ця ел. пошта вже використовується',
             ],
 
         'inputs'=>

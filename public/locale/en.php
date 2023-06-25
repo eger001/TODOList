@@ -22,6 +22,7 @@ return
                 'password without numbers'=>'Password must contain at least one digit',
                 'email doesn\'t exists'=>'You are not registered',
                 'incorrect password'=>'Invalid password',
+                'email exists' => 'This email is already in use',
             ],
 
         'inputs'=>

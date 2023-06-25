@@ -21,6 +21,7 @@ return
                 'password without numbers' => 'Hasło musi zawierać przynajmniej jedną cyfrę',
                 'email doesn\'t exists' => 'Nie jesteś zarejestrowany',
                 'incorrect password' => 'Nieprawidłowe hasło',
+                'email exists' => 'Ten adres e-mail jest już w użyciu',
             ],
 
         'inputs'=>

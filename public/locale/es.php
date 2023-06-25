@@ -20,6 +20,7 @@ return
                 'password without numbers' => 'La contraseña debe contener al menos un número',
                 'email doesn\'t exists' => 'No estás registrado',
                 'incorrect password' => 'Contraseña incorrecta',
+                'email exists' => 'Este correo electrónico ya está en uso',
             ],
 
         'inputs'=>

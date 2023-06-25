@@ -20,6 +20,7 @@ return
                 'password without numbers' => 'Паролата трябва да съдържа поне една цифра',
                 'email doesn\'t exists' => 'Не сте регистрирани',
                 'incorrect password' => 'Грешна парола',
+                'email exists' => 'Този имейл вече се използва',
             ],
 
         'inputs'=>
