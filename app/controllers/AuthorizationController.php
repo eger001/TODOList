@@ -31,6 +31,7 @@ class AuthorizationController extends Controller
     #[NoReturn] public function login(): void
     {
         $user = $this->authorizationAlgo();
+
         $errors = $this->validator->validateUserData($user);
         if (count($errors) != 0)
         {
@@ -38,10 +39,10 @@ class AuthorizationController extends Controller
             Router::goBack();
         }
         $_SESSION['authorized'] = true;
-        $token = bin2hex(random_bytes(32));
-        $_SESSION['csrf_token'] = $token;
+
         $userId = $this->model->get($user['email'])['id'];
         $this->userIDtoSession($userId);
+
         Router::redirect('user','index');
     }
 

@@ -35,12 +35,20 @@ class UserController extends Controller
      */
     #[NoReturn] public function store():void
     {
-        $this->model->add($this->authorizationAlgo());
         $user = $this->authorizationAlgo();
+        $errors = $this->validator->validateIsEmailAvailable($user);
+        if (count($errors) != 0)
+        {
+            Session::save('authorization', $errors);
+            Router::goBack();
+        }
+        $this->model->add($user);
+
+        $_SESSION['authorized'] = true;
+
         $userId = $this->model->get($user['email'])['id'];
         $this->userIDtoSession($userId);
-        $token = bin2hex(random_bytes(32));
-        $_SESSION['csrf_token'] = $token;
+
         Router::redirect('user','index');
     }
 }

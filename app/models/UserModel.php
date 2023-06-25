@@ -39,4 +39,20 @@ class UserModel extends Model
         $result = $stmt->get_result();
         return $result->fetch_assoc();
     }
+
+    public function getAllUsers(): array|null
+    {
+        $stmt = $this->db->prepare("SELECT login FROM $this->table ");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $usersEmails = [];
+
+        while($row = $result->fetch_assoc())
+        {
+            $usersEmails[] = $row['login'];
+        }
+
+        return $usersEmails;
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace app\traits;
 
+use app\controllers\UserController;
 use app\core\Router;
 use app\core\Session;
 use app\models\UserModel;
@@ -70,12 +71,24 @@ trait UserInputData
 
 
     /**
+     * @throws \Exception
+     */
+    private function pushToken(): void
+    {
+        $token = bin2hex(random_bytes(32));
+        $_SESSION['csrf_token'] = $token;
+    }
+
+
+    /**
      * @return array
+     * @throws \Exception
      */
     protected function authorizationAlgo() :array
     {
         $user = $this->getUserInputData();
         $this->checkUserData($user);
+        $this->pushToken();
         return $user;
     }
 }
