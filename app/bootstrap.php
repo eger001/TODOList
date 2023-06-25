@@ -34,6 +34,7 @@ function __($string = '', $locale = 'ua')
            'buttons.'=>$strings['buttons'] ?? [],
            'errors.'=>$strings['errors'] ?? [],
            'inputs.'=>$strings['inputs'] ?? [],
+            'common.'=>$strings['common'] ?? [],
         ] ;
 
     $category = '';
@@ -50,6 +51,10 @@ function __($string = '', $locale = 'ua')
     } elseif (str_starts_with($string, 'inputs.'))
     {
         $category = 'inputs.';
+        $key = substr($string, 7);
+    }elseif (str_starts_with($string, 'common.'))
+    {
+        $category = 'common.';
         $key = substr($string, 7);
     }
 

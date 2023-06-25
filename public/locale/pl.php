@@ -2,6 +2,11 @@
 return
     [
 
+        'common'=>
+            [
+                'greetings'=>'Witamy',
+            ],
+
         'buttons'=>
             [
                 'sign up'=>'Zarejestruj się',

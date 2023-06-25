@@ -21,9 +21,11 @@ class UserController extends Controller
     public function index(): void
     {
         $errors = Session::all('authorization');
+        $userName = Session::all('name');
         $this->view->render('start_page',
             [
                 'errors'=>$errors,
+                'user_name'=>$userName,
             ]);
     }
 
@@ -44,7 +46,8 @@ class UserController extends Controller
         }
         $this->model->add($user);
 
-        $_SESSION['authorized'] = true;
+        Session::save('authorized', true);
+        Session::save('user_name', $user['email']);
 
         $userId = $this->model->get($user['email'])['id'];
         $this->userIDtoSession($userId);

@@ -1,6 +1,11 @@
 <?php
 return
     [
+        'common'=>
+            [
+                'greetings'=>'Welcome',
+            ],
+
 
         'buttons'=>
             [

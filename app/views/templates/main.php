@@ -19,6 +19,11 @@
         </select>
     </form>
     <?php include_once \app\core\View::getPagePath()?>
+    <?php if(isset($_SESSION['user_name'])):?>
+    <div>
+        <span><?= __('common.greetings')?>, <?= $_SESSION['user_name']?></span>
+    <?php endif; ?>
+    </div>
 </div>
 </body>
 </html>

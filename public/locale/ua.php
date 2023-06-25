@@ -1,6 +1,11 @@
 <?php
 return
     [
+        'common'=>
+            [
+                'greetings'=>'Вітаємо',
+            ],
+
         'buttons'=>
             [
                 'sign up'=>'Зареєструватися',

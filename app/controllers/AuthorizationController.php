@@ -38,7 +38,8 @@ class AuthorizationController extends Controller
             Session::save('authorization', $errors);
             Router::goBack();
         }
-        $_SESSION['authorized'] = true;
+        Session::save('authorized', true);
+        Session::save('user_name', $user['email']);
 
         $userId = $this->model->get($user['email'])['id'];
         $this->userIDtoSession($userId);

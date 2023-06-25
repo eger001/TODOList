@@ -15,7 +15,7 @@ class Session
      * @param array $data
      * @return void
      */
-    public static function  save(string $prop, array $data): void
+    public static function  save(string $prop, mixed $data): void
     {
         $_SESSION[$prop] = $data;
     }
