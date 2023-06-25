@@ -12,6 +12,7 @@ use JetBrains\PhpStorm\NoReturn;
 
 class UserController extends Controller
 {
+    use UserInputData;
     public function __construct($template = null)
     {
         parent::__construct($template);

@@ -11,6 +11,7 @@ use JetBrains\PhpStorm\NoReturn;
 
 class AuthorizationController extends Controller
 {
+    use UserInputData;
     public function __construct($template = null)
     {
         parent::__construct($template);

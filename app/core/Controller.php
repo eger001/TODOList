@@ -3,12 +3,9 @@
 namespace app\core;
 
 use app\interfaces\Indexable;
-use app\traits\UserInputData;
 
 abstract class Controller implements Indexable
 {
-
-    use UserInputData;
     protected View $view;
     protected Model $model;
     protected Validator $validator;

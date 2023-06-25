@@ -60,17 +60,6 @@ trait UserInputData
 
 
     /**
-     * save user id in the session
-     * @param $userId
-     * @return void
-     */
-    protected function userIDtoSession($userId):void
-    {
-        $_SESSION['user_id'] = $userId;
-    }
-
-
-    /**
      * @throws \Exception
      */
     private function pushToken(): void
@@ -90,5 +79,16 @@ trait UserInputData
         $this->checkUserData($user);
         $this->pushToken();
         return $user;
+    }
+
+
+    /**
+     * save user id in the session
+     * @param $userId
+     * @return void
+     */
+    protected function userIDtoSession($userId):void
+    {
+        Session::save('user_id', $userId);
     }
 }
