@@ -98,4 +98,14 @@ class Validator
     }
 
 
+    public function validateIsEmailAvailable($user):array
+    {
+        $usersEmail = $this->model->getAllUsers();
+        if (in_array($user['email'], $usersEmail))
+        {
+            $this->errors[] = __('errors.email exists');
+        }
+        return $this->errors;
+    }
+
 }
