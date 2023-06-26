@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Courier New";
+    font-weight: bolder;
+}
+
+
+body{
+    height: 90vh;
+}
+
+
+header {
+    display: grid;
+    grid-template-columns: 0.5fr 4fr 0.5fr 0.5fr;
+    grid-auto-rows: 1fr;
+    background-color: #07575B;
+    color: #fff;
+    padding: 10px 5px;
+}
+
+.grid-item {
+    align-self: center;
+    justify-self: center;
+}
+
+.site-name>h1{
+    border-right: 1px solid #fff;
+    padding: 0 15px;
+}
+
+.logout>a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    height: 90vh;
+}
+
+aside{
+    height: 93vh;
+    width: 100%;
+    background-color: #07575B;
+    opacity: 50%;
+}
+
+
