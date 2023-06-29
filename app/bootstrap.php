@@ -13,7 +13,11 @@ function url(string|null $controller = null, string|null $action = null): string
     return \app\core\Router::url($controller, $action);
 }
 
+error_reporting(E_ALL);
+ini_set('display_errors', 0);
+ini_set('error_log', '../error.log');
 
+date_default_timezone_set('Europe/Kiev');
 
 function __($string = '', $locale = 'ua')
 {

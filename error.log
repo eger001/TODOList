@@ -1,0 +1,46 @@
+[29-Jun-2023 19:45:17 Europe/Moscow] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'toolist' in C:\OSPanel\domains\TODOList\app\core\Model.php on line 35
+[29-Jun-2023 19:46:28 Europe/Moscow] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'toolist' in C:\OSPanel\domains\TODOList\app\core\Model.php on line 35
+[29-Jun-2023 20:07:30 Europe/Moscow] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'toolist' in C:\OSPanel\domains\TODOList\app\core\Model.php on line 35
+[29-Jun-2023 20:14:40 Europe/Moscow] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'toolist' in C:\OSPanel\domains\TODOList\app\core\Model.php on line 35
+[29-Jun-2023 20:15:08 Europe/Moscow] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'toolist' in C:\OSPanel\domains\TODOList\app\core\Model.php on line 35
+[29-Jun-2023 20:16:32 Europe/Moscow] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'toolist' in C:\OSPanel\domains\TODOList\app\core\Model.php on line 35
+[29-Jun-2023 17:23:06 UTC] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'toolist' in C:\OSPanel\domains\TODOList\app\core\Model.php on line 35
+[29-Jun-2023 20:24:58 Europe/Kiev] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'toolist' in C:\OSPanel\domains\TODOList\app\core\Model.php on line 35
+[29-Jun-2023 20:32:27 Europe/Kiev] PHP Fatal error:  Uncaught Error: Typed property app\core\Model::$db must not be accessed before initialization in C:\OSPanel\domains\TODOList\app\core\Model.php:19
+Stack trace:
+#0 C:\OSPanel\domains\TODOList\app\core\Controller.php(16): app\core\Model->__construct()
+#1 C:\OSPanel\domains\TODOList\app\controllers\UserController.php(18): app\core\Controller->__construct()
+#2 C:\OSPanel\domains\TODOList\app\core\Router.php(66): app\controllers\UserController->__construct()
+#3 C:\OSPanel\domains\TODOList\app\bootstrap.php(94): app\core\Router::init()
+#4 C:\OSPanel\domains\TODOList\public\index.php(3): include_once('C:\\OSPanel\\doma...')
+#5 {main}
+  thrown in C:\OSPanel\domains\TODOList\app\core\Model.php on line 19
+[29-Jun-2023 20:33:15 Europe/Kiev] PHP Warning:  mysqli::__construct(): (HY000/2002): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера in C:\OSPanel\domains\TODOList\app\core\Model.php on line 43
+[29-Jun-2023 20:33:36 Europe/Kiev] PHP Warning:  mysqli::__construct(): (HY000/2002): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера in C:\OSPanel\domains\TODOList\app\database\CreateDB.php on line 11
+[29-Jun-2023 20:33:36 Europe/Kiev] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\OSPanel\domains\TODOList\app\database\CreateDB.php:35
+Stack trace:
+#0 C:\OSPanel\domains\TODOList\app\database\CreateDB.php(35): mysqli->query()
+#1 C:\OSPanel\domains\TODOList\app\database\CreateDB.php(23): app\database\CreateDB->createDb()
+#2 C:\OSPanel\domains\TODOList\app\core\Model.php(29): app\database\CreateDB::create()
+#3 C:\OSPanel\domains\TODOList\app\core\Controller.php(16): app\core\Model->__construct()
+#4 C:\OSPanel\domains\TODOList\app\controllers\UserController.php(18): app\core\Controller->__construct()
+#5 C:\OSPanel\domains\TODOList\app\core\Router.php(66): app\controllers\UserController->__construct()
+#6 C:\OSPanel\domains\TODOList\app\bootstrap.php(94): app\core\Router::init()
+#7 C:\OSPanel\domains\TODOList\public\index.php(3): include_once('C:\\OSPanel\\doma...')
+#8 {main}
+  thrown in C:\OSPanel\domains\TODOList\app\database\CreateDB.php on line 35
+[29-Jun-2023 20:35:59 Europe/Kiev] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'toolist' in C:\OSPanel\domains\TODOList\app\core\Model.php on line 41
+[29-Jun-2023 20:38:52 Europe/Kiev] PHP Warning:  mysqli::__construct(): (HY000/2002): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера in C:\OSPanel\domains\TODOList\app\database\CreateDB.php on line 11
+[29-Jun-2023 20:38:52 Europe/Kiev] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\OSPanel\domains\TODOList\app\database\CreateDB.php:35
+Stack trace:
+#0 C:\OSPanel\domains\TODOList\app\database\CreateDB.php(35): mysqli->query()
+#1 C:\OSPanel\domains\TODOList\app\database\CreateDB.php(23): app\database\CreateDB->createDb()
+#2 C:\OSPanel\domains\TODOList\app\core\Model.php(17): app\database\CreateDB::create()
+#3 C:\OSPanel\domains\TODOList\app\core\Controller.php(16): app\core\Model->__construct()
+#4 C:\OSPanel\domains\TODOList\app\controllers\UserController.php(18): app\core\Controller->__construct()
+#5 C:\OSPanel\domains\TODOList\app\core\Router.php(66): app\controllers\UserController->__construct()
+#6 C:\OSPanel\domains\TODOList\app\bootstrap.php(94): app\core\Router::init()
+#7 C:\OSPanel\domains\TODOList\public\index.php(3): include_once('C:\\OSPanel\\doma...')
+#8 {main}
+  thrown in C:\OSPanel\domains\TODOList\app\database\CreateDB.php on line 35
+[29-Jun-2023 20:39:30 Europe/Kiev] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'todoist' in C:\OSPanel\domains\TODOList\app\core\Model.php on line 38
