@@ -27,11 +27,11 @@
             </select>
         </form>
     </div>
-        <?php if (isset($_SESSION['authorized'])):?>
     <div class="logout grid-item">
+        <?php if (isset($_SESSION['authorized'])):?>
             <a href="<?= url('authorization', 'logout')?>"><?= __('buttons.log out')?></a>
-    </div>
         <?php endif;?>
+    </div>
 </header>
 <main>
     <aside class="grid-item">
