@@ -19,7 +19,7 @@ ini_set('error_log', '../error.log');
 
 date_default_timezone_set('Europe/Kiev');
 
-function __($string = '', $locale = 'ua')
+function __($string = '', $locale = 'ua') //TODO перенести в класс
 {
     if (!empty($_SESSION['locale']))
     {
@@ -39,6 +39,7 @@ function __($string = '', $locale = 'ua')
            'errors.'=>$strings['errors'] ?? [],
            'inputs.'=>$strings['inputs'] ?? [],
             'common.'=>$strings['common'] ?? [],
+            'other.'=>$strings['other'] ?? [],
         ] ;
 
     $category = '';
@@ -56,10 +57,14 @@ function __($string = '', $locale = 'ua')
     {
         $category = 'inputs.';
         $key = substr($string, 7);
-    }elseif (str_starts_with($string, 'common.'))
+    } elseif (str_starts_with($string, 'common.'))
     {
         $category = 'common.';
         $key = substr($string, 7);
+    } elseif (str_starts_with($string, 'other.'))
+    {
+        $category = 'other.';
+        $key = substr($string, 6);
     }
 
     if (!empty($category) && !empty($key) && isset($categories[$category][$key]))
