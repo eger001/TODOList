@@ -27,15 +27,27 @@
             </select>
         </form>
     </div>
-    <div class="logout grid-item">
         <?php if (isset($_SESSION['authorized'])):?>
+    <div class="logout grid-item">
             <a href="<?= url('authorization', 'logout')?>"><?= __('buttons.log out')?></a>
-        <?php endif;?>
     </div>
+        <?php endif;?>
 </header>
 <main>
     <aside class="grid-item">
-
+        <?php if (isset($_SESSION['authorized'])):?>
+            <ul>
+                <li><?= __('other.company')?>
+                    <ul>
+                        <li><a href="<?= url('employee', 'index')?>"><?= __('other.coworkers')?></a></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li></li>
+                <li></li>
+            </ul>
+        <?php endif;?>
     </aside>
     <div class="main-wrapper grid-item">
         <?php include_once \app\core\View::getPagePath()?>
