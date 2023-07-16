@@ -12,6 +12,7 @@ return
                 'sign up'=>'Register',
                 'sign in'=>'Log in',
                 'log out'=>'Log out',
+                'back'=>'Back'
             ],
 
 
@@ -34,6 +35,24 @@ return
             [
                 'enter email' => 'Enter email',
                 'enter password' => 'Enter password',
+            ],
+
+        'other'=>
+            [
+                'coworkers'=>'Employees',
+                'company'=>'Company',
+                'coworker'=>'Employee',
+                'email'=>'Email',
+                'role'=>'Role',
+                'telephone'=>'Phone',
+                'telegram'=>'Telegram',
+                'head'=>'Manager',
+                'status'=>'Status',
+                'employment date'=>'Employment date',
+                'date of dismissal'=>'Date of dismissal',
+                'actions'=>'Actions',
+                'active'=>'Active',
+                'inactive'=>'Inactive',
             ],
 
     ];

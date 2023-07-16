@@ -11,6 +11,7 @@ return
                 'sign up'=>'Регистрирай се',
                 'sign in'=>'Вход',
                 'log out'=>'Излезте',
+                'back'=>'Назад',
             ],
 
         'errors'=>
@@ -32,6 +33,24 @@ return
             [
                 'enter email' => 'Въведете имейл адрес',
                 'enter password' => 'Въведете парола',
+            ],
+
+        'other'=>
+            [
+                'coworkers'=>'Колеги',
+                'company'=>'Компания',
+                'coworker'=>'Служител',
+                'email'=>'Имейл',
+                'role'=>'Роля',
+                'telephone'=>'Телефон',
+                'telegram'=>'Телеграм',
+                'head'=>'Мениджър',
+                'status'=>'Статус',
+                'employment date'=>'Дата на наемане',
+                'date of dismissal'=>'Дата на освобождаване',
+                'actions'=>'Действия',
+                'active'=>'Активен',
+                'inactive'=>'Неактивен',
             ],
 
     ];

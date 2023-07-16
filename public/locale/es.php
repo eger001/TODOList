@@ -11,6 +11,7 @@ return
                 'sign up'=>'Registrarse',
                 'sign in'=>'Iniciar sesión',
                 'log out'=>'Cerrar sesión',
+                'back'=>'Volver',
             ],
 
         'errors'=>
@@ -32,6 +33,24 @@ return
             [
                 'enter email' => 'Ingrese su correo electrónico',
                 'enter password' => 'Ingrese su contraseña',
+            ],
+
+        'other'=>
+            [
+                'coworkers'=>'Compañeros de trabajo',
+                'company'=>'Empresa',
+                'coworker'=>'Empleado',
+                'email'=>'Correo electrónico',
+                'role'=>'Rol',
+                'telephone'=>'Teléfono',
+                'telegram'=>'Telegram',
+                'head'=>'Director',
+                'status'=>'Estado',
+                'employment date'=>'Fecha de contratación',
+                'date of dismissal'=>'Fecha de despido',
+                'actions'=>'Acciones',
+                'active'=>'Activo',
+                'inactive'=>'Inactivo',
             ],
 
     ];

@@ -11,6 +11,7 @@ return
                 'sign up'=>'Зареєструватися',
                 'sign in'=>'Увійти',
                 'log out'=>'Вийти',
+                'back'=>'Назад'
             ],
 
         'errors'=>
@@ -32,6 +33,24 @@ return
             [
                 'enter email' => 'Введіть електронну адресу',
                 'enter password' => 'Введіть пароль',
+            ],
+
+        'other'=>
+            [
+                'coworkers'=>'Співробітники',
+                'company'=>'Компанія',
+                'coworker'=>'Співробітник',
+                'email'=>'Електронна пошта',
+                'role'=>'Роль',
+                'telephone'=>'Телефон',
+                'telegram'=>'Телеграм',
+                'head'=>'Керівник',
+                'status'=>'Статус',
+                'employment date'=>'Дата прийому на роботу',
+                'date of dismissal'=>'Дата звільнення',
+                'actions'=>'Дії',
+                'active'=>'Активний',
+                'inactive'=>'Неактивний',
             ],
 
 

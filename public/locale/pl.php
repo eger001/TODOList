@@ -12,6 +12,7 @@ return
                 'sign up'=>'Zarejestruj się',
                 'sign in'=>'Zaloguj się',
                 'log out'=>'Wyloguj się',
+                'back'=>'Wstecz',
             ],
 
         'errors'=>
@@ -33,6 +34,24 @@ return
             [
                 'enter email' => 'Wprowadź adres e-mail',
                 'enter password' => 'Wprowadź hasło',
+            ],
+
+        'other'=>
+            [
+                'coworkers'=>'Współpracownicy',
+                'company'=>'Firma',
+                'coworker'=>'Pracownik',
+                'email'=>'E-mail',
+                'role'=>'Rola',
+                'telephone'=>'Telefon',
+                'telegram'=>'Telegram',
+                'head'=>'Kierownik',
+                'status'=>'Status',
+                'employment date'=>'Data zatrudnienia',
+                'date of dismissal'=>'Data zwolnienia',
+                'actions'=>'Akcje',
+                'active'=>'Aktywny',
+                'inactive'=>'Nieaktywny',
             ],
 
     ];
