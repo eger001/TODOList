@@ -17,14 +17,15 @@
 }
 
 .authorization{
-    background-color: rgba(7,87,91,0.51);
+    background-color: rgba(25,21,10,0.51);
     padding: 30px;
     width: 40%;
     height: 40%;
     align-self: center;
     justify-self: center;
+    color: #ffffff;
 }
 
 .authorization-form>span{
-    color: #5b2007;
+    color: #d80002;
 }

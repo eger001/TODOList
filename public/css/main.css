@@ -16,7 +16,7 @@ header {
     display: grid;
     grid-template-columns: 0.5fr 4fr 0.5fr 0.5fr;
     grid-auto-rows: 1fr;
-    background-color: #07575B;
+    background-color: #000;
     color: #fff;
     padding: 10px 5px;
 }
@@ -52,8 +52,12 @@ main {
 aside{
     height: 93vh;
     width: 100%;
-    background-color: #07575B;
-    opacity: 50%;
+    background-color: rgba(25,21,10,0.51);
+}
+
+.aside-elem {
+    color: #000;
+
 }
 
 
